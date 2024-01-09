@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+/* color */
+$color_main: #ff0101;
+$color_gray: #f1f1f1;
+$color_point: #ed8000;
+//1373px
+//media
+$media767: 767px; // スマホタブレット用のブレイクポイント
+$media1023: 1023px; // タブレット用のブレイクポイント1
+$media1280: 1250px; // PC用のブレイクポイント2
+$media1640: 1640px; // PC用のブレイクポイント2
+
+@mixin sp {
+  @media screen and (min-width: ($media767)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (min-width: ($media1023)) {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    @content;
+  }
+}
+@mixin media1280 {
+  @media screen and (min-width: ($media1280)) {
+    @content;
+  }
+}
+@mixin media1640 {
+  @media screen and (min-width: ($media1640)) {
+    @content;
+  }
+}
+
+/* commonスタイル */
+html[lang="ja"] {
+  font-size: 62.5%;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+body {
+  font-size: 1.4rem;
+  margin: 0;
+} /*font-size : 14px と同等*/
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+figure {
+  margin: 0;
+}
+
+.pc {
+  display: none;
+  @include tab() {
+    display: flex;
+  }
+}
+.sp {
+  display: block;
+  @include tab() {
+    display: none;
+  }
+}
+.contents {
+  padding: 0 1.5rem;
+  @include tab() {
+    max-width: 100rem;
+    width: 72%;
+    margin: 0 auto;
+  }
+}
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  @include tab() {
+    font-size: 4.5rem;
+  }
+}
+
+/** footer */
+.footer {
+  position: relative;
+  background-color: #222;
+  padding: 6rem 0 8rem;
+  text-align: center;
+  color: #fff;
+  @include tab() {
+    padding: 6rem 0 1rem;
+  }
+
+  &_box {
+    h2 {
+      margin: 0 auto;
+      width: 13rem;
+    }
+
+    .add {
+      padding-bottom: 4rem;
+    }
+  }
+  &_sp {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background-color: $color_sub;
+    align-items: center;
+    @include tab() {
+      display: none;
+    }
+    a {
+      width: 50%;
+      text-align: center;
+      font-size: 1.6rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 5rem;
+      line-height: 5rem;
+      &:first-child {
+        border-right: 1px dashed #fff;
+      }
+      span {
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+
+/** inview **/
+
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+// 下からフェードイン
+.js-fadeBottom {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+.js-fadeBottom.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+// 上からフェードイン
+.js-fadeTop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+.js-fadeTop.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+// 左からフェードイン
+.js-fadeLeft {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+.js-fadeLeft.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+// 右からフェードイン
+.js-fadeRight {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+.js-fadeRight.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+/**パララックス*/
+.parallax1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
