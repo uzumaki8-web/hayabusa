@@ -500,7 +500,7 @@ main {
     }
     &_box {
       position: relative;
-      padding: 6rem 1.5rem;
+      padding: 6rem 0;
 
       @include tab() {
         text-align: center;
@@ -532,9 +532,9 @@ main {
       }
 
       p {
-        padding-bottom: 2rem;
+        padding: 0 1.5rem 2rem;
         @include tab() {
-          padding-bottom: 3rem;
+          padding: 0 0 3rem;
         }
       }
       &_google {

@@ -618,7 +618,7 @@ main .contact_us {
 }
 main .contact_us_box {
   position: relative;
-  padding: 6rem 1.5rem;
+  padding: 6rem 0;
 }
 @media screen and (min-width: 1023px) {
   main .contact_us_box {
@@ -658,12 +658,12 @@ main .contact_us_box h2 {
   }
 }
 main .contact_us_box p {
-  padding-bottom: 2rem;
+  padding: 0 1.5rem 2rem;
 }
 @media screen and (min-width: 1023px) {
   main .contact_us_box p {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
-    padding-bottom: 3rem;
+    padding: 0 0 3rem;
   }
 }
 main .contact_us_box_google iframe {
