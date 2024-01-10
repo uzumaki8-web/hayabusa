@@ -36,18 +36,27 @@ $media1640: 1640px; // PC用のブレイクポイント2
 /* commonスタイル */
 html[lang="ja"] {
   font-size: 62.5%;
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "M PLUS 1p", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif;
 }
+
 body {
+  margin: -2rem 0 0 0;
+  width: 100%;
   font-size: 1.4rem;
-  margin: 0;
+  padding: 0;
+  position: relative;
+  @include tab() {
+  }
 } /*font-size : 14px と同等*/
 a {
   text-decoration: none;
+  color: #222;
 }
 ul,
 li {
   list-style: none;
+  margin: 0;
 }
 ul {
   padding: 0;
@@ -79,61 +88,496 @@ figure {
     margin: 0 auto;
   }
 }
+h1,
+h4 {
+  margin: 0;
+}
 h2 {
-  font-size: 2.5rem;
+  margin: 0;
+  font-size: 3.5rem;
   font-weight: bold;
   @include tab() {
     font-size: 4.5rem;
+  }
+}
+h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  @include tab() {
+    font-size: 3rem;
+  }
+}
+.red_line {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  border-bottom: 8px solid $color_main;
+  line-height: 1.8rem;
+  @include tab() {
+    font-size: 4.5rem;
+    line-height: 2.5rem;
+  }
+}
+address {
+  font-style: normal;
+}
+.contact_btn {
+  z-index: 9999999;
+  font-size: 7px;
+  position: fixed;
+  top: 1.5rem;
+  right: 1rem;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid $color_main;
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include tab() {
+    font-size: 9px;
+    top: 6rem;
+    right: 3rem;
+    height: 10rem;
+    width: 10rem;
+  }
+  p {
+    text-align: center;
+    span {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+}
+/* header */
+header {
+  padding: 10rem 0 3rem;
+  width: 100%;
+  background-color: #f1f1f1;
+  background-image: url("../images/header_bg_img.png");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  @include tab {
+    padding: 18rem 0 5.5rem;
+  }
+
+  .header_inner {
+    z-index: 1;
+    width: 90%;
+    margin: 0 auto 3rem;
+    @include tab() {
+      margin: 0 auto 6rem;
+      max-width: 100rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: bold;
+      padding-bottom: 2rem;
+      @include tab() {
+        font-size: 4.5rem;
+        padding-bottom: 4rem;
+      }
+      small {
+        font-size: 1.8rem;
+        padding-bottom: 2rem;
+        @include tab() {
+          font-size: 2rem;
+        }
+      }
+      span {
+        color: $color_main;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    @include tab() {
+      width: 50rem;
+    }
+    a {
+      color: #222;
+    }
+  }
+}
+/*main */
+main {
+  .about {
+    background-color: #f1f1f1;
+    padding: 4rem 1.5rem 5rem;
+    @include tab() {
+      text-align: center;
+      padding: 5rem 0 17rem;
+    }
+    &_box {
+      border: #222 2px solid;
+      background-color: #fff;
+      padding: 4rem 1.5rem;
+      @include tab() {
+        padding: 9.5rem 0 15rem;
+      }
+      h3 {
+        padding: 3rem 0;
+        @include tab() {
+          padding: 4rem 0 5rem;
+        }
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 2;
+        @include tab() {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  .media {
+    background-color: $color_main;
+
+    @include tab() {
+      text-align: center;
+    }
+    &_box {
+      padding: 4rem 1.5rem;
+      @include tab() {
+        padding: 5rem 0;
+      }
+      h2 {
+        color: #fff;
+        text-align: center;
+        @include tab() {
+        }
+      }
+      ul {
+        padding: 2rem 0;
+        @include tab() {
+          padding: 5rem 0 3rem;
+        }
+        li {
+          background-color: #fff;
+          line-height: 2rem;
+          margin-bottom: 2rem;
+          padding: 1rem;
+          @include tab() {
+            line-height: 2rem;
+            margin-bottom: 6rem;
+            padding: 3rem;
+          }
+          a {
+            font-size: 1.6rem;
+            color: #222;
+            @include tab() {
+              font-size: 1.8rem;
+            }
+          }
+          &:last-child {
+            margin-bottom: 0;
+            @include tab() {
+              margin-bottom: 6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .service {
+    z-index: 1;
+    padding-bottom: 5rem;
+    @include tab() {
+      padding: 5rem 0 17rem;
+    }
+    &_box {
+      padding-top: 6rem;
+      @include tab() {
+        text-align: left;
+        padding-top: 9.5rem;
+      }
+      h3 {
+        padding: 1rem 0 0;
+        @include tab() {
+          padding: 3rem 0 0;
+        }
+      }
+    }
+    .service_wrap {
+      background-color: #fff;
+      padding-top: 6rem;
+      @include tab() {
+        padding-top: 10rem;
+      }
+      &_item {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 6rem;
+
+        @include tab() {
+          flex-direction: row;
+          align-items: flex-start;
+          padding-bottom: 10rem;
+        }
+        figure {
+          position: relative;
+          order: 1;
+          width: 70%;
+          margin: 2rem auto;
+          @include tab() {
+            width: 45%;
+            padding-right: 12rem;
+          }
+          img {
+            border-radius: 50%;
+          }
+          figcaption {
+            font-size: 3.7rem;
+            font-weight: bold;
+            font-family: "Noto Sans JP", sans-serif;
+            color: $color_main;
+            position: absolute;
+            top: -3rem;
+            left: 4rem;
+            transform: rotate(-10deg);
+            -moz-transform: rotate(-10deg);
+            -webkit-transform: rotate(-10deg);
+            @include tab() {
+              top: -3.5rem;
+              left: 7rem;
+              font-size: 5rem;
+            }
+          }
+        }
+        &_list {
+          order: 2;
+          @include tab() {
+            order: 1;
+            width: 55%;
+          }
+          h4 {
+            font-size: 2.3rem;
+            font-weight: bold;
+            line-height: 4rem;
+            text-align: center;
+            @include tab() {
+              text-align: left;
+              font-size: 3rem;
+              line-height: 6rem;
+            }
+          }
+          p {
+            margin-bottom: 3rem;
+            line-height: 3rem;
+            font-size: 1.6rem;
+            @include tab() {
+              line-height: 3rem;
+            }
+          }
+        }
+      }
+      &:nth-child(odd) {
+        background-color: #f1f1f1;
+        padding-top: 6rem;
+        @include tab() {
+        }
+        figure {
+          position: relative;
+          order: 1;
+          @include tab() {
+            order: 2;
+            width: 45%;
+            padding-left: 12rem;
+          }
+          figcaption {
+            text-align: right;
+            top: -3.5rem;
+            right: 3rem;
+            transform: rotate(10deg);
+            -moz-transform: rotate(10deg);
+            -webkit-transform: rotate(10deg);
+            @include tab() {
+              top: -6rem;
+              right: 17rem;
+            }
+          }
+        }
+        .service_box_item_list {
+          order: 2;
+          @include tab() {
+            order: 1;
+            width: 55%;
+          }
+        }
+      }
+    }
+  }
+  .message {
+    padding-top: 7rem;
+
+    @include tab() {
+      padding: unset;
+    }
+    .shikaku {
+      display: block;
+      width: 7rem;
+      height: 3rem;
+      background-color: $color_main;
+      position: absolute;
+      top: -5rem;
+      left: 0;
+      @include tab() {
+        width: 19rem;
+        height: 9rem;
+        top: -12rem;
+        left: -18rem;
+      }
+    }
+    &_box {
+      position: relative;
+      padding-bottom: 7rem;
+      @include tab() {
+        padding-bottom: 15rem;
+      }
+      &_img {
+        position: absolute;
+        right: 0;
+        top: -15rem;
+        width: 15rem;
+        @include tab() {
+          width: 37rem;
+          top: -20rem;
+        }
+      }
+
+      &_item {
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 0;
+        @include tab() {
+          flex-direction: row;
+          align-items: center;
+          width: 50rem;
+          padding: 6.5rem 0 5rem;
+        }
+        figure {
+          width: 70%;
+          margin: 3rem auto;
+          @include tab() {
+            width: 50%;
+            margin: unset;
+            padding-right: 6rem;
+          }
+        }
+        h3 {
+          text-align: center;
+          font-size: 2.5rem;
+          @include tab() {
+            text-align: left;
+            font-size: 3rem;
+            width: 50%;
+          }
+        }
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 2;
+        @include tab() {
+          font-size: 1.6rem;
+          width: 85%;
+        }
+      }
+    }
+  }
+  .contact_us {
+    background-color: #f1f1f1;
+    @include tab() {
+    }
+    &_box {
+      position: relative;
+      padding: 6rem 1.5rem;
+
+      @include tab() {
+        text-align: center;
+        padding: 10rem 0;
+      }
+      .shikaku {
+        z-index: 0;
+        width: 5rem;
+        height: 5rem;
+        background-color: $color_point;
+        position: absolute;
+        top: 5rem;
+        left: 1.5rem;
+        @include tab() {
+          top: 3rem;
+          left: 0;
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+      h2 {
+        position: relative;
+        margin-left: 2.5rem;
+        z-index: 1;
+        padding-bottom: 2rem;
+        @include tab() {
+          padding-bottom: 3rem;
+        }
+      }
+
+      p {
+        padding-bottom: 2rem;
+        @include tab() {
+          padding-bottom: 3rem;
+        }
+      }
+      &_google {
+        iframe {
+          width: 100%;
+          height: 110rem;
+          overflow: unset;
+        }
+      }
+    }
   }
 }
 
 /** footer */
 .footer {
   position: relative;
-  background-color: #222;
-  padding: 6rem 0 8rem;
+  background-color: $color_main;
+  padding: 2rem 0 5px;
   text-align: center;
   color: #fff;
   @include tab() {
-    padding: 6rem 0 1rem;
+    padding: 2rem 0 1rem;
   }
 
-  &_box {
-    h2 {
-      margin: 0 auto;
-      width: 13rem;
-    }
-
-    .add {
-      padding-bottom: 4rem;
-    }
-  }
-  &_sp {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+  ul {
     display: flex;
-    background-color: $color_sub;
-    align-items: center;
+    justify-content: space-between;
+    margin: 2rem auto 4rem;
+    width: 80%;
     @include tab() {
-      display: none;
+      margin: 5rem auto 7rem;
+      width: 50rem;
     }
     a {
-      width: 50%;
-      text-align: center;
-      font-size: 1.6rem;
       color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 5rem;
-      line-height: 5rem;
-      &:first-child {
-        border-right: 1px dashed #fff;
-      }
-      span {
-        padding-right: 1rem;
-      }
+    }
+  }
+  .copyright {
+    font-size: 12px;
+    margin: 0;
+    color: #fff;
+    a {
+      color: #fff;
     }
   }
 }

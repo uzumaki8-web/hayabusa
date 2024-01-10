@@ -1,0 +1,786 @@
+@charset "UTF-8";
+/* color */
+/* commonスタイル */
+html[lang=ja] {
+  font-size: 62.5%;
+  font-family: "M PLUS 1p", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+body {
+  margin: -2rem 0 0 0;
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 0;
+  position: relative;
+}
+@media screen and (min-width: 1023px) {
+  body {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+
+/*font-size : 14px と同等*/
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+.pc {
+  display: none;
+}
+@media screen and (min-width: 1023px) {
+  .pc {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    display: flex;
+  }
+}
+
+.sp {
+  display: block;
+}
+@media screen and (min-width: 1023px) {
+  .sp {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    display: none;
+  }
+}
+
+.contents {
+  padding: 0 1.5rem;
+}
+@media screen and (min-width: 1023px) {
+  .contents {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    max-width: 100rem;
+    width: 72%;
+    margin: 0 auto;
+  }
+}
+
+h1,
+h4 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 1023px) {
+  h2 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 4.5rem;
+  }
+}
+
+h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 1023px) {
+  h3 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 3rem;
+  }
+}
+
+.red_line {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  border-bottom: 8px solid #ff0101;
+  line-height: 1.8rem;
+}
+@media screen and (min-width: 1023px) {
+  .red_line {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 4.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+.contact_btn {
+  z-index: 9999999;
+  font-size: 7px;
+  position: fixed;
+  top: 1.5rem;
+  right: 1rem;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #ff0101;
+  height: 8rem;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 1023px) {
+  .contact_btn {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 9px;
+    top: 6rem;
+    right: 3rem;
+    height: 10rem;
+    width: 10rem;
+  }
+}
+.contact_btn p {
+  text-align: center;
+}
+.contact_btn p span {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* header */
+header {
+  padding: 10rem 0 3rem;
+  width: 100%;
+  background-color: #f1f1f1;
+  background-image: url("../images/header_bg_img.png");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+@media screen and (min-width: 1023px) {
+  header {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 18rem 0 5.5rem;
+  }
+}
+header .header_inner {
+  z-index: 1;
+  width: 90%;
+  margin: 0 auto 3rem;
+}
+@media screen and (min-width: 1023px) {
+  header .header_inner {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    margin: 0 auto 6rem;
+    max-width: 100rem;
+  }
+}
+header .header_inner h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 1023px) {
+  header .header_inner h1 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 4.5rem;
+    padding-bottom: 4rem;
+  }
+}
+header .header_inner h1 small {
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 1023px) {
+  header .header_inner h1 small {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 2rem;
+  }
+}
+header .header_inner h1 span {
+  color: #ff0101;
+}
+header ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
+}
+@media screen and (min-width: 1023px) {
+  header ul {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 50rem;
+  }
+}
+header ul a {
+  color: #222;
+}
+
+/*main */
+main .about {
+  background-color: #f1f1f1;
+  padding: 4rem 1.5rem 5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .about {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: center;
+    padding: 5rem 0 17rem;
+  }
+}
+main .about_box {
+  border: #222 2px solid;
+  background-color: #fff;
+  padding: 4rem 1.5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .about_box {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 9.5rem 0 15rem;
+  }
+}
+main .about_box h3 {
+  padding: 3rem 0;
+}
+@media screen and (min-width: 1023px) {
+  main .about_box h3 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 4rem 0 5rem;
+  }
+}
+main .about_box p {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+@media screen and (min-width: 1023px) {
+  main .about_box p {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 1.6rem;
+  }
+}
+main .media {
+  background-color: #ff0101;
+}
+@media screen and (min-width: 1023px) {
+  main .media {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: center;
+  }
+}
+main .media_box {
+  padding: 4rem 1.5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .media_box {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 5rem 0;
+  }
+}
+main .media_box h2 {
+  color: #fff;
+  text-align: center;
+}
+@media screen and (min-width: 1023px) {
+  main .media_box h2 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+main .media_box ul {
+  padding: 2rem 0;
+}
+@media screen and (min-width: 1023px) {
+  main .media_box ul {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 5rem 0 3rem;
+  }
+}
+main .media_box ul li {
+  background-color: #fff;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+@media screen and (min-width: 1023px) {
+  main .media_box ul li {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    line-height: 2rem;
+    margin-bottom: 6rem;
+    padding: 3rem;
+  }
+}
+main .media_box ul li a {
+  font-size: 1.6rem;
+  color: #222;
+}
+@media screen and (min-width: 1023px) {
+  main .media_box ul li a {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 1.8rem;
+  }
+}
+main .media_box ul li:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1023px) {
+  main .media_box ul li:last-child {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    margin-bottom: 6rem;
+  }
+}
+main .service {
+  z-index: 1;
+  padding-bottom: 5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .service {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 5rem 0 17rem;
+  }
+}
+main .service_box {
+  padding-top: 6rem;
+}
+@media screen and (min-width: 1023px) {
+  main .service_box {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: left;
+    padding-top: 9.5rem;
+  }
+}
+main .service_box h3 {
+  padding: 1rem 0 0;
+}
+@media screen and (min-width: 1023px) {
+  main .service_box h3 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 3rem 0 0;
+  }
+}
+main .service .service_wrap {
+  background-color: #fff;
+  padding-top: 6rem;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding-top: 10rem;
+  }
+}
+main .service .service_wrap_item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 6rem;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 10rem;
+  }
+}
+main .service .service_wrap_item figure {
+  position: relative;
+  order: 1;
+  width: 70%;
+  margin: 2rem auto;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item figure {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 45%;
+    padding-right: 12rem;
+  }
+}
+main .service .service_wrap_item figure img {
+  border-radius: 50%;
+}
+main .service .service_wrap_item figure figcaption {
+  font-size: 3.7rem;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #ff0101;
+  position: absolute;
+  top: -3rem;
+  left: 4rem;
+  transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item figure figcaption {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    top: -3.5rem;
+    left: 7rem;
+    font-size: 5rem;
+  }
+}
+main .service .service_wrap_item_list {
+  order: 2;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item_list {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    order: 1;
+    width: 55%;
+  }
+}
+main .service .service_wrap_item_list h4 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  line-height: 4rem;
+  text-align: center;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item_list h4 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: left;
+    font-size: 3rem;
+    line-height: 6rem;
+  }
+}
+main .service .service_wrap_item_list p {
+  margin-bottom: 3rem;
+  line-height: 3rem;
+  font-size: 1.6rem;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item_list p {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    line-height: 3rem;
+  }
+}
+main .service .service_wrap:nth-child(odd) {
+  background-color: #f1f1f1;
+  padding-top: 6rem;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap:nth-child(odd) {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+main .service .service_wrap:nth-child(odd) figure {
+  position: relative;
+  order: 1;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap:nth-child(odd) figure {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    order: 2;
+    width: 45%;
+    padding-left: 12rem;
+  }
+}
+main .service .service_wrap:nth-child(odd) figure figcaption {
+  text-align: right;
+  top: -3.5rem;
+  right: 3rem;
+  transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap:nth-child(odd) figure figcaption {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    top: -6rem;
+    right: 17rem;
+  }
+}
+main .service .service_wrap:nth-child(odd) .service_box_item_list {
+  order: 2;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap:nth-child(odd) .service_box_item_list {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    order: 1;
+    width: 55%;
+  }
+}
+main .message {
+  padding-top: 7rem;
+}
+@media screen and (min-width: 1023px) {
+  main .message {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: unset;
+  }
+}
+main .message .shikaku {
+  display: block;
+  width: 7rem;
+  height: 3rem;
+  background-color: #ff0101;
+  position: absolute;
+  top: -5rem;
+  left: 0;
+}
+@media screen and (min-width: 1023px) {
+  main .message .shikaku {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 19rem;
+    height: 9rem;
+    top: -12rem;
+    left: -18rem;
+  }
+}
+main .message_box {
+  position: relative;
+  padding-bottom: 7rem;
+}
+@media screen and (min-width: 1023px) {
+  main .message_box {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding-bottom: 15rem;
+  }
+}
+main .message_box_img {
+  position: absolute;
+  right: 0;
+  top: -15rem;
+  width: 15rem;
+}
+@media screen and (min-width: 1023px) {
+  main .message_box_img {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 37rem;
+    top: -20rem;
+  }
+}
+main .message_box_item {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0;
+}
+@media screen and (min-width: 1023px) {
+  main .message_box_item {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    flex-direction: row;
+    align-items: center;
+    width: 50rem;
+    padding: 6.5rem 0 5rem;
+  }
+}
+main .message_box_item figure {
+  width: 70%;
+  margin: 3rem auto;
+}
+@media screen and (min-width: 1023px) {
+  main .message_box_item figure {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 50%;
+    margin: unset;
+    padding-right: 6rem;
+  }
+}
+main .message_box_item h3 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .message_box_item h3 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: left;
+    font-size: 3rem;
+    width: 50%;
+  }
+}
+main .message_box p {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+@media screen and (min-width: 1023px) {
+  main .message_box p {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    font-size: 1.6rem;
+    width: 85%;
+  }
+}
+main .contact_us {
+  background-color: #f1f1f1;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+main .contact_us_box {
+  position: relative;
+  padding: 6rem 1.5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us_box {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    text-align: center;
+    padding: 10rem 0;
+  }
+}
+main .contact_us_box .shikaku {
+  z-index: 0;
+  width: 5rem;
+  height: 5rem;
+  background-color: #ed8000;
+  position: absolute;
+  top: 5rem;
+  left: 1.5rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us_box .shikaku {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    top: 3rem;
+    left: 0;
+    width: 10rem;
+    height: 10rem;
+  }
+}
+main .contact_us_box h2 {
+  position: relative;
+  margin-left: 2.5rem;
+  z-index: 1;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us_box h2 {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding-bottom: 3rem;
+  }
+}
+main .contact_us_box p {
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 1023px) {
+  main .contact_us_box p {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding-bottom: 3rem;
+  }
+}
+main .contact_us_box_google iframe {
+  width: 100%;
+  height: 110rem;
+  overflow: unset;
+}
+
+/** footer */
+.footer {
+  position: relative;
+  background-color: #ff0101;
+  padding: 2rem 0 5px;
+  text-align: center;
+  color: #fff;
+}
+@media screen and (min-width: 1023px) {
+  .footer {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    padding: 2rem 0 1rem;
+  }
+}
+.footer ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto 4rem;
+  width: 80%;
+}
+@media screen and (min-width: 1023px) {
+  .footer ul {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    margin: 5rem auto 7rem;
+    width: 50rem;
+  }
+}
+.footer ul a {
+  color: #fff;
+}
+.footer .copyright {
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+}
+.footer .copyright a {
+  color: #fff;
+}
+
+/** inview **/
+.js-fade {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.js-fadeBottom {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeBottom.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.js-fadeTop {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeTop.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.js-fadeLeft {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeLeft.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+.js-fadeRight {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50px);
+  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+}
+
+.js-fadeRight.inview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+}
+
+/**パララックス*/
+.parallax1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: auto;
+}/*# sourceMappingURL=style.css.map */
