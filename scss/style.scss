@@ -32,16 +32,25 @@ $media1640: 1640px; // PC用のブレイクポイント2
     @content;
   }
 }
+/*
+英語のタイトル
+font-family: 'Josefin Sans', sans-serif;
+MVのBGフォント
+font-family: 'Noto Sans JP', sans-serif;
+日本語の基本フォント
+font-family: 'Zen Maru Gothic', serif;
 
+*/
 /* commonスタイル */
 html[lang="ja"] {
   font-size: 62.5%;
-  font-family: "M PLUS 1p", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo,
-    sans-serif;
+  font-family: Zen Maru Gothic, serif, Noto Sans JP, Hiragino Kaku Gothic ProN,
+    Meiryo, sans-serif;
 }
 
 body {
   margin: -2rem 0 0 0;
+  max-width: 100%;
   width: 100%;
   font-size: 1.4rem;
   padding: 0;
@@ -112,43 +121,56 @@ h3 {
   display: inline-block;
   font-size: 3.5rem;
   font-weight: bold;
-  font-family: "Noto Sans JP", sans-serif;
-  border-bottom: 8px solid $color_main;
-  line-height: 1.8rem;
+  font-family: "Josefin Sans", sans-serif;
+  border-bottom: 5px solid $color_main;
+  line-height: 1.3rem;
   @include tab() {
-    font-size: 4.5rem;
-    line-height: 2.5rem;
+    border-bottom: 9px solid $color_main;
+    font-size: 5.5rem;
+    line-height: 1.8rem;
   }
 }
-address {
-  font-style: normal;
+
+.more_icon {
+  display: inline-flex;
+  background: #ffffff;
+  height: calc(tan(60deg) * 10px / 2);
+  height: 10px;
+  width: 10px;
+  margin-left: 1rem;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 .contact_btn {
   z-index: 9999999;
   font-size: 7px;
   position: fixed;
-  top: 1.5rem;
   right: 1rem;
+  top: 1rem;
   background-color: #fff;
   border-radius: 50%;
-  border: 2px solid $color_main;
+  border: 3px solid $color_main;
   height: 8rem;
   width: 8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
   @include tab() {
-    font-size: 9px;
-    top: 6rem;
-    right: 3rem;
+    font-size: 10px;
+    top: 4rem;
+    right: 2rem;
     height: 10rem;
     width: 10rem;
   }
   p {
     text-align: center;
+    line-height: 1.5;
     span {
+      font-family: "Josefin Sans", sans-serif;
       font-size: 1.4rem;
-      font-weight: bold;
+      @include tab() {
+        font-size: 1.6rem;
+      }
     }
   }
 }
@@ -157,42 +179,68 @@ header {
   padding: 10rem 0 3rem;
   width: 100%;
   background-color: #f1f1f1;
-  background-image: url("../images/header_bg_img.png");
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
   position: relative;
   z-index: 0;
   @include tab {
-    padding: 18rem 0 5.5rem;
+    padding: 18rem 0;
   }
 
+  .bg_font {
+    position: absolute;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 6.8rem;
+    color: #fff;
+    z-index: -1;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    @include tab {
+      font-size: 27rem;
+      top: 60%;
+      left: 50%;
+    }
+  }
   .header_inner {
-    z-index: 1;
+    z-index: 2;
     width: 90%;
-    margin: 0 auto 3rem;
+    margin: 0 auto 4rem;
     @include tab() {
-      margin: 0 auto 6rem;
+      margin: 0 auto 9rem;
       max-width: 100rem;
     }
     h1 {
       text-align: center;
       font-size: 3rem;
       font-weight: bold;
-      padding-bottom: 2rem;
+      padding-bottom: 4rem;
       @include tab() {
-        font-size: 4.5rem;
-        padding-bottom: 4rem;
+        font-size: 7cqb;
+        padding-bottom: 7rem;
       }
       small {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         padding-bottom: 2rem;
         @include tab() {
-          font-size: 2rem;
+          font-size: 2.5rem;
         }
       }
       span {
         color: $color_main;
+      }
+    }
+    figure {
+      display: flex;
+      justify-content: center;
+      @include tab() {
+        display: unset;
+      }
+      img {
+        max-width: 30rem;
+        @include tab() {
+          max-width: unset;
+        }
       }
     }
   }
@@ -205,37 +253,43 @@ header {
       width: 50rem;
     }
     a {
+      font-size: 1.6rem;
+      font-weight: bold;
       color: #222;
+      @include tab() {
+        font-size: 1.8rem;
+      }
     }
   }
 }
 /*main */
 main {
+  width: 100%;
   .about {
     background-color: #f1f1f1;
-    padding: 4rem 1.5rem 5rem;
+    padding: 5rem 1.5rem 8rem;
     @include tab() {
       text-align: center;
-      padding: 5rem 0 17rem;
+      padding: 5rem 0 30rem;
     }
     &_box {
       border: #222 2px solid;
       background-color: #fff;
-      padding: 4rem 1.5rem;
+      padding: 6rem 1.5rem 4rem;
       @include tab() {
-        padding: 9.5rem 0 15rem;
+        padding: 10rem 0 15rem;
       }
       h3 {
         padding: 3rem 0;
         @include tab() {
-          padding: 4rem 0 5rem;
+          padding: 4rem 0;
         }
       }
       p {
         font-size: 1.5rem;
         line-height: 2;
         @include tab() {
-          font-size: 1.6rem;
+          font-size: 1.7rem;
         }
       }
     }
@@ -247,14 +301,23 @@ main {
       text-align: center;
     }
     &_box {
-      padding: 4rem 1.5rem;
+      padding: 6rem 1.5rem;
       @include tab() {
-        padding: 5rem 0;
+        padding: 18rem 0 10rem;
       }
       h2 {
+        position: relative;
+        z-index: 1;
+        padding-bottom: 3rem;
+        font-size: 3.5rem;
+        font-weight: bold;
+        font-family: "Josefin Sans", sans-serif;
+        line-height: 1.7rem;
         color: #fff;
-        text-align: center;
         @include tab() {
+          font-size: 5.5rem;
+          line-height: 1.8rem;
+          padding-bottom: 7rem;
         }
       }
       ul {
@@ -265,20 +328,59 @@ main {
         li {
           background-color: #fff;
           line-height: 2rem;
-          margin-bottom: 2rem;
-          padding: 1rem;
+          margin-bottom: 4rem;
+          display: flex;
+          flex-direction: column;
+          border-radius: 5px;
           @include tab() {
+            max-height: 26rem;
+            flex-direction: row;
             line-height: 2rem;
-            margin-bottom: 6rem;
-            padding: 3rem;
+            margin-bottom: 10rem;
           }
-          a {
-            font-size: 1.6rem;
-            color: #222;
+          img {
             @include tab() {
-              font-size: 1.8rem;
+              width: 45%;
+              object-fit: contain;
+              object-position: left;
             }
           }
+          .media_box_list {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 3rem;
+            @include tab() {
+              padding-bottom: unset;
+            }
+
+            p {
+              font-weight: bold;
+              line-height: 2;
+              text-align: center;
+              font-size: 1.5rem;
+              @include tab() {
+                line-height: 1.5;
+                font-size: 1.8rem;
+              }
+            }
+            a {
+              background-color: #222;
+              display: block;
+              line-height: 2;
+              text-align: center;
+              color: #fff;
+              width: 20rem;
+              border-radius: 1rem;
+              @include tab() {
+                font-size: 1.4rem;
+                width: 22rem;
+              }
+            }
+          }
+
           &:last-child {
             margin-bottom: 0;
             @include tab() {
@@ -293,18 +395,22 @@ main {
     z-index: 1;
     padding-bottom: 5rem;
     @include tab() {
-      padding: 5rem 0 17rem;
+      padding: 5rem 0;
     }
-    &_box {
-      padding-top: 6rem;
+    &_head {
+      padding: 6rem 1.5rem 0;
+      text-align: center;
       @include tab() {
+        max-width: 100rem;
         text-align: left;
         padding-top: 9.5rem;
       }
       h3 {
+        font-size: 2rem;
         padding: 1rem 0 0;
         @include tab() {
-          padding: 3rem 0 0;
+          font-size: 3rem;
+          padding: 2rem 0 0 6rem;
         }
       }
     }
@@ -320,9 +426,10 @@ main {
         padding-bottom: 6rem;
 
         @include tab() {
+          max-width: 95rem;
           flex-direction: row;
           align-items: flex-start;
-          padding-bottom: 10rem;
+          padding-bottom: 12rem;
         }
         figure {
           position: relative;
@@ -330,8 +437,9 @@ main {
           width: 70%;
           margin: 2rem auto;
           @include tab() {
-            width: 45%;
+            width: 35%;
             padding-right: 12rem;
+            margin: 2rem auto 0;
           }
           img {
             border-radius: 50%;
@@ -348,7 +456,7 @@ main {
             -moz-transform: rotate(-10deg);
             -webkit-transform: rotate(-10deg);
             @include tab() {
-              top: -3.5rem;
+              top: -4.5rem;
               left: 7rem;
               font-size: 5rem;
             }
@@ -358,7 +466,7 @@ main {
           order: 2;
           @include tab() {
             order: 1;
-            width: 55%;
+            width: 50%;
           }
           h4 {
             font-size: 2.3rem;
@@ -368,7 +476,7 @@ main {
             @include tab() {
               text-align: left;
               font-size: 3rem;
-              line-height: 6rem;
+              line-height: 5rem;
             }
           }
           p {
@@ -376,7 +484,21 @@ main {
             line-height: 3rem;
             font-size: 1.6rem;
             @include tab() {
+              font-size: 1.7rem;
               line-height: 3rem;
+            }
+          }
+          .address {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            @include tab() {
+              line-height: 2;
+            }
+            span {
+              display: inline-block;
+              width: 6rem;
+              @include tab() {
+              }
             }
           }
         }
@@ -385,43 +507,110 @@ main {
         background-color: #f1f1f1;
         padding-top: 6rem;
         @include tab() {
+          padding-top: 10rem;
         }
-        figure {
-          position: relative;
-          order: 1;
+        .service_wrap_item {
           @include tab() {
-            order: 2;
-            width: 45%;
-            padding-left: 12rem;
+            justify-content: space-between;
           }
-          figcaption {
-            text-align: right;
-            top: -3.5rem;
-            right: 3rem;
-            transform: rotate(10deg);
-            -moz-transform: rotate(10deg);
-            -webkit-transform: rotate(10deg);
+          &_img {
+            position: relative;
+            order: 1;
             @include tab() {
-              top: -6rem;
-              right: 17rem;
+              order: 2;
+            }
+            figure {
+              @include tab() {
+                padding-right: unset;
+                width: 33rem;
+              }
+              figcaption {
+                text-align: right;
+                top: -2rem;
+                right: 3rem;
+                transform: rotate(10deg);
+                -moz-transform: rotate(10deg);
+                -webkit-transform: rotate(10deg);
+                @include tab() {
+                  top: -4.5rem;
+                  right: 5rem;
+                }
+              }
+            }
+            a {
+              margin: 2rem auto 0;
+              background-color: #ff0101;
+              color: #fff;
+              width: 80%;
+              text-align: center;
+              display: block;
+              padding: 0.5rem 0;
+              border-radius: 1rem;
+              @include tab() {
+                margin: 4rem auto 0;
+
+                width: 25rem;
+              }
+            }
+          }
+          &_list {
+            order: 2;
+            @include tab() {
+              order: 1;
+              width: 50%;
             }
           }
         }
-        .service_box_item_list {
-          order: 2;
+      }
+      &:nth-child(4) {
+        .service_wrap_item {
+          .address {
+            span {
+              width: 8rem;
+              @include tab() {
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(5) {
+        .service_wrap_item {
           @include tab() {
-            order: 1;
-            width: 55%;
+            padding-bottom: 7rem;
+          }
+          &_img {
+            padding-bottom: 4rem;
+            @include tab() {
+              padding-bottom: unset;
+            }
           }
         }
       }
     }
   }
   .message {
-    padding-top: 7rem;
-
+    padding-top: 5rem;
+    position: relative;
     @include tab() {
-      padding: unset;
+      padding-top: 20rem;
+    }
+    .message_img {
+      position: absolute;
+      right: 0;
+      top: -10rem;
+      height: 15rem;
+      width: 15rem;
+      padding-bottom: 7rem;
+      background-image: url("../images/message_img.png");
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: 100%;
+      @include tab() {
+        background-size: 40rem;
+        top: -20rem;
+        height: 50rem;
+        width: 50rem;
+      }
     }
     .shikaku {
       display: block;
@@ -429,45 +618,38 @@ main {
       height: 3rem;
       background-color: $color_main;
       position: absolute;
-      top: -5rem;
+      top: 0;
       left: 0;
       @include tab() {
         width: 19rem;
         height: 9rem;
-        top: -12rem;
+        top: -10rem;
         left: -18rem;
       }
     }
     &_box {
       position: relative;
-      padding-bottom: 7rem;
+      z-index: -1;
+      padding-bottom: 5rem;
       @include tab() {
         padding-bottom: 15rem;
       }
-      &_img {
-        position: absolute;
-        right: 0;
-        top: -15rem;
-        width: 15rem;
-        @include tab() {
-          width: 37rem;
-          top: -20rem;
-        }
+      h2 {
+        padding-top: 7rem;
       }
-
       &_item {
         display: flex;
         flex-direction: column;
-        padding: 4rem 0;
+        padding: 2rem 0;
         @include tab() {
           flex-direction: row;
           align-items: center;
           width: 50rem;
-          padding: 6.5rem 0 5rem;
+          padding: 5rem 0 5rem;
         }
         figure {
           width: 70%;
-          margin: 3rem auto;
+          margin: 2rem auto;
           @include tab() {
             width: 50%;
             margin: unset;
@@ -479,7 +661,7 @@ main {
           font-size: 2.5rem;
           @include tab() {
             text-align: left;
-            font-size: 3rem;
+            font-size: 3.5rem;
             width: 50%;
           }
         }
@@ -488,7 +670,7 @@ main {
         font-size: 1.5rem;
         line-height: 2;
         @include tab() {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
           width: 85%;
         }
       }
@@ -500,44 +682,40 @@ main {
     }
     &_box {
       position: relative;
-      padding: 6rem 0;
-
+      padding: 7rem 1.5rem;
       @include tab() {
         text-align: center;
-        padding: 10rem 0;
-      }
-      .shikaku {
-        z-index: 0;
-        width: 5rem;
-        height: 5rem;
-        background-color: $color_point;
-        position: absolute;
-        top: 5rem;
-        left: 1.5rem;
-        @include tab() {
-          top: 3rem;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-        }
+        padding: 15rem 0;
       }
       h2 {
         position: relative;
-        margin-left: 2.5rem;
         z-index: 1;
         padding-bottom: 2rem;
+        font-size: 3.5rem;
+        font-weight: bold;
+        font-family: "Josefin Sans", sans-serif;
+        line-height: 1.7rem;
         @include tab() {
+          font-size: 5.5rem;
+          line-height: 1.8rem;
+
           padding-bottom: 3rem;
         }
       }
 
       p {
-        padding: 0 1.5rem 2rem;
+        padding: 0 0 2rem;
         @include tab() {
           padding: 0 0 3rem;
         }
       }
       &_google {
+        background-image: url(../images/contact_bg.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        @include tab() {
+        }
         iframe {
           width: 100%;
           height: 120rem;
