@@ -710,10 +710,6 @@ main {
         }
       }
       &_google {
-        background-image: url(../images/contact_bg.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
         @include tab() {
         }
         iframe {

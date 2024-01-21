@@ -871,12 +871,6 @@ main .contact_us_box p {
     padding: 0 0 3rem;
   }
 }
-main .contact_us_box_google {
-  background-image: url(../images/contact_bg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
 @media screen and (min-width: 1023px) {
   main .contact_us_box_google {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
