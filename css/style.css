@@ -310,7 +310,7 @@ main .about {
   main .about {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
     text-align: center;
-    padding: 5rem 0 30rem;
+    padding: 5rem 0 15rem;
   }
 }
 main .about_box {
@@ -358,7 +358,7 @@ main .media_box {
 @media screen and (min-width: 1023px) {
   main .media_box {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
-    padding: 18rem 0 10rem;
+    padding: 13rem 0 10rem;
   }
 }
 main .media_box h2 {
@@ -787,7 +787,7 @@ main .message_box_item {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
     flex-direction: row;
     align-items: center;
-    width: 50rem;
+    width: 55rem;
     padding: 5rem 0 5rem;
   }
 }
