@@ -58,6 +58,9 @@ body {
   @include tab() {
   }
 } /*font-size : 14px と同等*/
+.wrap {
+  overflow: hidden;
+}
 a {
   text-decoration: none;
   color: #222;
