@@ -94,6 +94,8 @@ figure {
 }
 .contents {
   padding: 0 1.5rem;
+  max-width: 50rem;
+  margin: 0 auto;
   @include tab() {
     max-width: 100rem;
     width: 72%;
