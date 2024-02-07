@@ -296,6 +296,7 @@ header ul a {
   font-size: 1.6rem;
   font-weight: bold;
   color: #222;
+  font-family: "Josefin Sans", sans-serif;
 }
 @media screen and (min-width: 1023px) {
   header ul a {
@@ -922,6 +923,7 @@ main .contact_us_box_google iframe {
   }
 }
 .footer ul a {
+  font-family: "Josefin Sans", sans-serif;
   color: #fff;
 }
 .footer .copyright {
