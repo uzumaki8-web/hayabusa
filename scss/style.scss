@@ -430,20 +430,21 @@ main {
         display: flex;
         flex-direction: column;
         padding-bottom: 6rem;
-
         @include tab() {
           max-width: 95rem;
           flex-direction: row;
           align-items: flex-start;
           padding-bottom: 12rem;
         }
+
         figure {
           position: relative;
           order: 1;
           width: 70%;
           margin: 2rem auto;
           @include tab() {
-            width: 35%;
+            width: 33rem;
+
             padding-right: 12rem;
             margin: 2rem auto 0;
           }
@@ -505,6 +506,42 @@ main {
               width: 6rem;
               @include tab() {
               }
+            }
+          }
+        }
+        &_link {
+          width: 70%;
+          margin: 2rem auto;
+          @include tab() {
+            width: 35%;
+            padding-right: 12rem;
+            margin: 2rem auto 0;
+          }
+          figure {
+            width: 100%;
+            position: relative;
+            order: 1;
+            margin: 2rem auto;
+            @include tab() {
+              width: 33rem;
+              margin: 2rem auto 0;
+            }
+            img {
+              width: 100%;
+            }
+          }
+          a {
+            margin: 2rem auto 0;
+            background-color: #ff0101;
+            color: #fff;
+            width: 80%;
+            text-align: center;
+            display: block;
+            padding: 0.5rem 0;
+            border-radius: 1rem;
+            @include tab() {
+              margin: 4rem auto 0;
+              width: 25rem;
             }
           }
         }

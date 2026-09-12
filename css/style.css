@@ -540,7 +540,7 @@ main .service .service_wrap_item figure {
 @media screen and (min-width: 1023px) {
   main .service .service_wrap_item figure {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
-    width: 35%;
+    width: 33rem;
     padding-right: 12rem;
     margin: 2rem auto 0;
   }
@@ -621,6 +621,51 @@ main .service .service_wrap_item_list .address span {
 @media screen and (min-width: 1023px) {
   main .service .service_wrap_item_list .address span {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+  }
+}
+main .service .service_wrap_item_link {
+  width: 70%;
+  margin: 2rem auto;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item_link {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 35%;
+    padding-right: 12rem;
+    margin: 2rem auto 0;
+  }
+}
+main .service .service_wrap_item_link figure {
+  width: 100%;
+  position: relative;
+  order: 1;
+  margin: 2rem auto;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item_link figure {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    width: 33rem;
+    margin: 2rem auto 0;
+  }
+}
+main .service .service_wrap_item_link figure img {
+  width: 100%;
+}
+main .service .service_wrap_item_link a {
+  margin: 2rem auto 0;
+  background-color: #ff0101;
+  color: #fff;
+  width: 80%;
+  text-align: center;
+  display: block;
+  padding: 0.5rem 0;
+  border-radius: 1rem;
+}
+@media screen and (min-width: 1023px) {
+  main .service .service_wrap_item_link a {
+    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
+    margin: 4rem auto 0;
+    width: 25rem;
   }
 }
 main .service .service_wrap:nth-child(odd) {
