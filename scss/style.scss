@@ -44,8 +44,13 @@ font-family: 'Zen Maru Gothic', serif;
 /* commonスタイル */
 html[lang="ja"] {
   font-size: 62.5%;
-  font-family: Zen Maru Gothic, serif, Noto Sans JP, Hiragino Kaku Gothic ProN,
-    Meiryo, sans-serif;
+  font-family:
+    Zen Maru Gothic,
+    serif,
+    Noto Sans JP,
+    Hiragino Kaku Gothic ProN,
+    Meiryo,
+    sans-serif;
 }
 
 body {
@@ -629,6 +634,19 @@ main {
           }
         }
       }
+      // 05 Lunoa nail studio（.service 内の6番目）
+      &:nth-child(6) {
+        .service_wrap_item {
+          figure {
+            img {
+              width: 100%;
+              aspect-ratio: 1 / 1;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
     }
   }
   .message {
@@ -809,7 +827,10 @@ main {
   opacity: 0;
   visibility: hidden;
   transform: translateY(50px);
-  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+  transition:
+    opacity 1.5s,
+    visibility 1.5s,
+    transform 1.5s;
 }
 
 .inview {
@@ -823,7 +844,10 @@ main {
   opacity: 0;
   visibility: hidden;
   transform: translateY(50px);
-  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+  transition:
+    opacity 1.5s,
+    visibility 1.5s,
+    transform 1.5s;
 }
 .js-fadeBottom.inview {
   opacity: 1;
@@ -836,7 +860,10 @@ main {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-50px);
-  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+  transition:
+    opacity 1.5s,
+    visibility 1.5s,
+    transform 1.5s;
 }
 .js-fadeTop.inview {
   opacity: 1;
@@ -849,7 +876,10 @@ main {
   opacity: 0;
   visibility: hidden;
   transform: translateX(50px);
-  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+  transition:
+    opacity 1.5s,
+    visibility 1.5s,
+    transform 1.5s;
 }
 .js-fadeLeft.inview {
   opacity: 1;
@@ -862,7 +892,10 @@ main {
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50px);
-  transition: opacity 1.5s, visibility 1.5s, transform 1.5s;
+  transition:
+    opacity 1.5s,
+    visibility 1.5s,
+    transform 1.5s;
 }
 .js-fadeRight.inview {
   opacity: 1;
