@@ -415,18 +415,13 @@ main .news_feature {
   flex-direction: column;
   gap: 3rem;
   background-color: #fff;
+  text-align: left;
   border-radius: 5px;
   padding: 2rem 1.5rem 3rem;
-  text-align: left;
+  margin-bottom: 4rem;
 }
-main .news_feature + .news_feature {
-  margin-top: 4rem;
-}
-@media screen and (min-width: 1023px) {
-  main .news_feature + .news_feature {
-    /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
-    margin-top: 6rem;
-  }
+main .news_feature:last-of-type {
+  margin-bottom: 0;
 }
 @media screen and (min-width: 1023px) {
   main .news_feature {
@@ -435,6 +430,10 @@ main .news_feature + .news_feature {
     align-items: stretch;
     gap: 4rem;
     padding: 4rem;
+    margin-bottom: 6rem;
+  }
+  main .news_feature:last-of-type {
+    margin-bottom: 0;
   }
 }
 main .news_feature_media {
@@ -490,7 +489,7 @@ main .news_feature_gallery.is-two {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 main .news_feature_gallery.is-two li:only-child {
-  grid-column: 1 / -1;
+  grid-column: 1/-1;
   width: 50%;
   max-width: 14rem;
   margin: 0 auto;
@@ -567,7 +566,7 @@ main .news_feature_btn {
     font-size: 1.6rem;
   }
 }
-main .news_feature_btn.news_feature_btn--dark {
+main .news_feature_btn--dark {
   background-color: #222;
 }
 main .news_feature_info {
@@ -915,13 +914,13 @@ main .service .service_wrap_item_list .address span {
   }
 }
 main .service .service_wrap_item_logo {
-  width: 55%;
+  width: 47%;
   margin: 1.5rem auto 0;
 }
 @media screen and (min-width: 1023px) {
   main .service .service_wrap_item_logo {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
-    width: 18rem;
+    width: 15.3rem;
     margin: 2.5rem auto 0;
   }
 }
@@ -961,7 +960,7 @@ main .service .service_wrap_item_logo.is-circle img {
   transform: scale(1.04);
 }
 main .service .service_wrap_item_link {
-  width: 70%;
+  width: 100%;
   margin: 2rem auto;
 }
 @media screen and (min-width: 1023px) {
@@ -973,7 +972,7 @@ main .service .service_wrap_item_link {
   }
 }
 main .service .service_wrap_item_link .service_wrap_item_photo {
-  width: 100%;
+  width: 70%;
   max-width: 33rem;
   position: relative;
   order: 1;
@@ -983,6 +982,7 @@ main .service .service_wrap_item_link .service_wrap_item_photo {
   main .service .service_wrap_item_link .service_wrap_item_photo {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
     width: 33rem;
+    max-width: 33rem;
     margin: 2rem auto 0;
   }
 }
@@ -1037,7 +1037,7 @@ main .service .service_wrap:nth-child(odd) {
 main .service .service_wrap:nth-child(odd) .service_wrap_item_img {
   position: relative;
   order: 1;
-  width: 70%;
+  width: 100%;
   margin: 2rem auto;
 }
 @media screen and (min-width: 1023px) {
@@ -1049,7 +1049,7 @@ main .service .service_wrap:nth-child(odd) .service_wrap_item_img {
   }
 }
 main .service .service_wrap:nth-child(odd) .service_wrap_item_img .service_wrap_item_photo {
-  width: 100%;
+  width: 70%;
   max-width: 33rem;
   position: relative;
   margin: 2rem auto;
@@ -1059,6 +1059,7 @@ main .service .service_wrap:nth-child(odd) .service_wrap_item_img .service_wrap_
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
     padding-right: unset;
     width: 33rem;
+    max-width: 33rem;
     margin: 2rem 0 0 auto;
   }
 }
@@ -1228,15 +1229,25 @@ main .message_box_item {
 }
 main .message_box_item figure {
   width: 70%;
+  max-width: 28rem;
   margin: 2rem auto;
 }
 @media screen and (min-width: 1023px) {
   main .message_box_item figure {
     /* タブレット用レイアウト 1,025px以上の範囲に収めるデザインはこの中に記述 */
     width: 50%;
+    max-width: 22rem;
     margin: unset;
     padding-right: 6rem;
   }
+}
+main .message_box_item figure img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
 }
 main .message_box_item h3 {
   text-align: center;

@@ -361,17 +361,19 @@ main {
       text-align: left;
       border-radius: 5px;
       padding: 2rem 1.5rem 3rem;
-      & + & {
-        margin-top: 4rem;
-        @include tab() {
-          margin-top: 6rem;
-        }
+      margin-bottom: 4rem;
+      &:last-of-type {
+        margin-bottom: 0;
       }
       @include tab() {
         flex-direction: row;
         align-items: stretch;
         gap: 4rem;
         padding: 4rem;
+        margin-bottom: 6rem;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
       &_media {
         width: 100%;
@@ -763,10 +765,10 @@ main {
           }
         }
         &_logo {
-          width: 55%;
+          width: 47%;
           margin: 1.5rem auto 0;
           @include tab() {
-            width: 18rem;
+            width: 15.3rem;
             margin: 2.5rem auto 0;
           }
           img {
@@ -805,7 +807,7 @@ main {
           }
         }
         &_link {
-          width: 70%;
+          width: 100%;
           margin: 2rem auto;
           @include tab() {
             width: 35%;
@@ -813,13 +815,14 @@ main {
             margin: 2rem auto 0;
           }
           .service_wrap_item_photo {
-            width: 100%;
+            width: 70%;
             max-width: 33rem;
             position: relative;
             order: 1;
             margin: 2rem auto;
             @include tab() {
               width: 33rem;
+              max-width: 33rem;
               margin: 2rem auto 0;
             }
             img {
@@ -866,7 +869,7 @@ main {
           &_img {
             position: relative;
             order: 1;
-            width: 70%;
+            width: 100%;
             margin: 2rem auto;
             @include tab() {
               order: 2;
@@ -874,13 +877,14 @@ main {
               margin: 2rem 0 0;
             }
             .service_wrap_item_photo {
-              width: 100%;
+              width: 70%;
               max-width: 33rem;
               position: relative;
               margin: 2rem auto;
               @include tab() {
                 padding-right: unset;
                 width: 33rem;
+                max-width: 33rem;
                 margin: 2rem 0 0 auto;
               }
               img {
@@ -1030,11 +1034,21 @@ main {
         }
         figure {
           width: 70%;
+          max-width: 28rem;
           margin: 2rem auto;
           @include tab() {
             width: 50%;
+            max-width: 22rem;
             margin: unset;
             padding-right: 6rem;
+          }
+          img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            display: block;
           }
         }
         h3 {
